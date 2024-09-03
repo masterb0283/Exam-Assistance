@@ -11,6 +11,10 @@ body{
     -ms-user-select: none;     /* Internet Explorer/Edge */
     user-select: none;         /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }
+.top-strip {
+    background-color: black;
+    height: 50px; /* Adjust the height as needed */
+    width: 100%}
 
 nav{
     display: flex;
@@ -18,7 +22,7 @@ nav{
     margin-top: 15px;
     justify-content: space-between;
     gap: 2px;
-    border-bottom: 2px solid red;
+    border-bottom: 20px solid black;
     /* border:3px solid green; */
     /* margin-left: 30px; */
 }
@@ -27,10 +31,15 @@ nav a{
     margin-left: 30px;
     /* border: 1px solid white; */
     font-weight: bold;
-    background-color: white;
+    background-color: green;
+    color: white;
     border: 2px solid red;
     border-radius: 12px;
     padding: 3px 5px;
+}
+
+.neco1{
+    background-image: none;
 }
 .waec{
     font-weight: bold;
@@ -52,6 +61,7 @@ nav a{
 
 .call{
     font-weight: bold;
+    margin-bottom: 30px;
 }
 
 .fixed1 {
@@ -78,11 +88,36 @@ nav a{
 .fixed2 i{
     font-size: 20px;
     position: fixed;
-    background-color: rgb(164, 114, 13);
-    color: rgb(0, 0, 0);
+    background-color: green;
+    color: red;
     border-radius: 6px;
 }
 
+.countdown-container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #fff;
+    /* color: red; */
+    padding: 10px;
+    /* justify-content: center; */
+    /* margin-left: 100px; */
+    /* width: 50%; */
+    border: 2px solid green;
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+
+  .countdown-container p{
+    margin-left: 50px;
+  }
+  
+  .countdown {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #333;
+  }
 
 
 .exam{
@@ -587,11 +622,12 @@ nav a{
 }
 
 .neco{
-    background-color: #DBC024;
+    background-color: #898998;
     -webkit-user-select: none; /* Safari */
     -moz-user-select: none;    /* Firefox */
     -ms-user-select: none;     /* Internet Explorer/Edge */
-    user-select: none;         /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
+    user-select: none; 
+    color: white;        /* Non-prefixed version, currently supported by Chrome, Opera and Firefox */
 }
 .neco1{
     display: flex;
@@ -682,12 +718,14 @@ nav a{
     justify-content: center;
     /* margin-left: 40%; */
     text-transform: uppercase;
+    color: red;
 }
 .neco5 h1{
     display: flex;
     font-size: 30px;
-    color: #02C057;
-    margin-left: 30px
+    color: black;
+    margin-left: 30px;
+    margin-bottom: 40px;
 }
 .contain {
     display: flex;
@@ -1080,8 +1118,8 @@ nav a{
 /* Add this media query at the end of your CSS file */
 @media screen and (max-width: 768px) {
     body {
-        background-color: #02C057;
-        color: whitesmoke;
+        background-color: white;
+        color: green;
     }
 
     nav {
@@ -1092,10 +1130,12 @@ nav a{
         gap: 35px;
         font-weight: bolder;
         font-size: 20px;
+        background-image: url(./JAMB-logo.jpg);
+        background-size: cover;
     }
     nav a:hover{
-        color: red;
-        background-color: #333;
+        color: white;
+        background-color: black;
     }
 
 
@@ -1103,7 +1143,10 @@ nav a{
         margin: 0;
         margin: 0;
         text-decoration: none;
+        /* background-color: #02C057; */
+        /* color: white; */
         /* color: rgb(165, 9, 9); Default color */
+        border:2px solid rgb(189, 11, 121);
         transition: color 0.3s;
         font-size: 20px;
         margin-bottom: 2px solid red;
@@ -1131,11 +1174,43 @@ nav a{
         flex-direction: column;
     }
 
+    .exam1 p{
+        background-color: #02C057;
+        color: white;
+    }
+
     
 
     .image1 img, .image2 img, .image3 img, .image4 img, .image6 img, .image7 img, .exam11 img {
         width: 100%;
         margin: 0;
+    }
+
+    .image1{
+        background-color: green;
+        padding: 10px;
+
+    }
+    .image2{
+        background-color: #02C057;
+        padding: 8px;
+    }
+
+    .image3{
+        background-color: #02C057;
+        padding: 8px;
+        /* gap: 2px; */
+    }
+
+    .image4{
+        background-color: #02C057;
+        padding: 8px;
+        gap: 2px;
+    }
+
+    .image6{
+        background-color: #45a049;
+        gap: 3px;
     }
 
     .image8{
@@ -1167,14 +1242,49 @@ nav a{
         margin: 0;
         justify-content: center;
         align-items: center;
-        margin-left: 60px;
+        margin-left: 50px;
         
+    }
+
+    .etr1{
+        background-color: #02C057;
+        color: white;
+    }
+    .etr1 a{
+        color: white;
+        padding: 3px 6px;
     }
 
     .exam3 a, .exam9 a {
         width: 80%;
         margin: 10px auto;
         padding: 8px;
+    }
+    .exam3 a{
+        background-color: #02C057;
+        color: white;
+    }
+
+    .etr2 {
+        background-color:#02c057;
+        color: white;
+    }
+    .etr2 b{
+        color: white;
+    }
+
+    .add1 a{
+        background-color: #02C057;
+        color: white;
+    }
+
+    .exam6 b{
+        background-color: #02C057;
+        color: white;
+    }
+
+    .exam7{
+        border:2px solid #4CAF50;
     }
 
     .exam8 h2{
@@ -1194,6 +1304,16 @@ nav a{
         height: auto;
     }
 
+    .containt{
+        background-color: #02C057;
+        /* padding: 10px; */
+        margin: 0px 6px;
+    }
+
+    .boxt{
+        margin-top: 0px;
+    }
+
     .form-box, .box, .boxs {
         width: 100%;
     }
@@ -1209,6 +1329,17 @@ nav a{
     .image6, .image7 {
         width: 100%;
         margin: 0;
+        background-color: #4CAF50;
+        padding: 8px;
+    }
+
+    .image8, .image9 {
+        width: 100%;
+        margin: 0;
+        background-color: #4CAF50;
+        padding: 8px;
+        /* gap: 10px; */
+        margin-top: 15px;
     }
 
     .upgrade1, .neco2, .neco3, .neco4 {
@@ -1244,7 +1375,12 @@ nav a{
     .exam6 b{
         margin: 0px;
         margin: 20px 0px;
-        color: #430606;
+        color: white;
+    }
+
+    .exam6 h2{
+        /* background-color: #65b087; */
+        color: green;
     }
 
     .exam9 h1{
@@ -1262,10 +1398,32 @@ nav a{
         margin: 0;
         font-size: 23px;
         margin: 20px 0px;
+        color: white;
+        background-color: #054b08;
+    }
+
+    .exam9 a{
+        background-color: #058b41;
+        color: white;
     }
     .exam9 b{
         margin: 0px;
         font-size: 18px;
+    }
+    ol {
+        background-color: #02c057;
+        padding: 10px;
+        gap: 10px;
+        
+    }
+
+    ol li{
+        /* background-color: #054b08; */
+        color: rgb(237, 17, 17);
+        font-weight: bolder;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        text-align: center;
     }
     .container{
         display: flex;
@@ -1273,6 +1431,13 @@ nav a{
         margin: 10px 15px;
         justify-content: center;
         margin-right: 10px;
+        background-color: #02c057;
+        padding: 10px;
+    }
+
+    .form-box{
+        margin-right: 5px;
+
     }
 
     .exam10 h1{
@@ -1282,10 +1447,18 @@ nav a{
         margin: 0px;
         margin: 30px 12px;
         font-size: 22px;
+        background-color: white;
     }
+
+    .exam10 li{
+        color: green;
+    }
+
     .exam10 b{
         margin: 0;
         font-size: 22px;
+        background-color: #02C057;
+        color: white;
     }
 
     .exam11 h3{
@@ -1293,6 +1466,8 @@ nav a{
         font-size: medium;
         font-style: italic;
         margin: 20px 0px;
+        background-color: green;
+        color: whitesmoke;
     }
     .exam13 h1{
         font-size: 28px;
@@ -1301,12 +1476,23 @@ nav a{
         margin: 0px;
         font-size: 20px;
         margin: 19px 0px;
+        background-color: green;
+        color: whitesmoke;
     }
+
     .exam13 p{
         font-size: 21px;
     }
     .exam13 h3{
         font-size: 24px;
+    }
+
+    .exam14{
+        background-color: #054b08;
+
+    }
+    .exam14 a{
+        color: white;
     }
     .neco2 h1{
         margin: 0px;

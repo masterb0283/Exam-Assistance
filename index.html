@@ -5,8 +5,11 @@
     <title>JAMB ASSISTANCE</title>
     <link rel="stylesheet" href="exam.css">
     <script src="https://kit.fontawesome.com/2e10b73d37.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
+    <div class="top-strip"></div>
+
     <header>
         <nav>
             <div><a href="./index.html" target="_blank">JAMB ASSISTANCE AND TUTORIAL</a></div>
@@ -40,6 +43,13 @@
 
     </div>
 
+    <div class="countdown-container">
+        <div><p>price will increase in the next</p></div>
+        <div class="countdown" id="countdown">00:00:00</div>
+      </div>
+    
+
+
 
 
     <div class="exam1">
@@ -54,8 +64,9 @@
         <div><p> JAMB Board had earlier stated that the age limit for any candidate intending to write the Unified Tertiary Matriculation Examination (UTME) organised by the Joint Admissions and Matriculation Board (JAMB) remained 18 years.<br>Jamb added that candidate must be 18yrs old before the 2025 academic calender,<br>this means that candidate that are 17years old now and would be 18 before september 2025 can also register <br>becase the 2025 academic calender will start by september 2025 for admission processing after jamb.
         </p></div>
         <div><p>please message the admin now if you need further explanation,<br>also there is privilege for you to write jamb if you are below 18, just message the admin so that you can know how to do it.</p></div>
-        <div><a href="https://wa.me/2349027420688">CLICK HERE TO MESSAGE ADMIN</a></div>
-
+        <div class="etr1"><div><a href="https://wa.me/2349027420688">CLICK HERE TO MESSAGE ADMIN</a></div>
+    </div>
+        
         <div><h1>what you must know about JAMB !!!</h1></div>
         <div><p>The Joint Admission and Matriculation Board (JAMB) is an entrance examination conducted in Nigeria. It is conducted for tertiary level institutions. It is worthy to note that Jamb being a board conducts and organizes the examination which is called UTME (Unified Tertiary Matriculation Examination).Also, once you fail JAMB, you will wait for another year before you can enrole or register for another JAMB</p></div>
         <div><h1>can i pass jamb with only lesson and tutorial ?</h1></div>
@@ -71,12 +82,17 @@
 
     <div class="exam3">
         <div><h1>is jamb runz or jamb assistance real ?</h1></div>
-        <div><b>yes!!!, jamb runz or jamb assistance is 100% real and legit. not only that JAMB runz is true but also congratulation to you because you are at the right place for your assistance to get higher score in your 2025 jamb. </b></div>
+        <div class="etr2">
+            <div><b>yes!!!, jamb runz or jamb assistance is 100% real and legit. not only that JAMB runz is true but also congratulation to you because you are at the right place for your assistance to get higher score in your 2025 jamb. </b></div>
+        </div>
+        
         <div><p>
             JAMB Expo/Runs 2024 was fake to those who subscribe to Scammers, but if you subscribe to official DAN, a score of 280 to 350 is guaranteed.OFFICIAL DAN has been helping candidate for over 7 years and he has never disappointed anyone and surely he will never disappoint you also if you subscribe to OFFICIAL DAN.  2025 JAMB Runs is never fake and cannot be fake because there are numerous testimonies of our past candidates and many more proof on how we will assist you.</p></div>
-
-            <div><a href="https://wa.me/2349027420688" target="_blank">please click here to message OFFICIAL DAN </a></div>
+            <div class="etr3">
+                <div><a href="https://wa.me/2349027420688" target="_blank">please click here to message OFFICIAL DAN </a></div>
     </div>
+            </div>
+
 
     <div class="exam4">
         <div><h1>below are some of our past candidate result </h1></div>
@@ -125,7 +141,7 @@
             <input type="tel" id="tel" name="tel" placeholder="Enter your phone number" required>
 
             <label for="message">Message*</label>
-            <textarea id="message" name="message" placeholder="Enter the ntype of Jamb package you want" required></textarea>
+            <textarea id="message" name="message" placeholder="Enter the type of Jamb package you want" required></textarea>
 
             <button type="submit">SEND</button>
         </form>
@@ -329,6 +345,54 @@ mybutton.addEventListener('click', function(){
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
 });
+
+// script.js
+
+// Function to start the countdown
+function startCountdown(duration) {
+  let timer = duration, days, hours, minutes, seconds;
+  const countdownElement = document.getElementById('countdown');
+
+  const interval = setInterval(function () {
+    days = Math.floor(timer / 86400);
+    hours = Math.floor((timer % 86400) / 3600);
+    minutes = Math.floor((timer % 3600) / 60);
+    seconds = timer % 60;
+
+    days = days < 10 ? '0' + days : days;
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+
+    countdownElement.textContent = `${days}:${hours}:${minutes}:${seconds}`;
+
+    // Stop countdown at 0
+    if (--timer < 0) {
+      clearInterval(interval);
+      countdownElement.textContent = "Time's Up! Price has increased!";
+    }
+  }, 1000);
+}
+
+// Function to show an alert every 1 minute
+function showRepeatingAlertFor7Days(duration) {
+  const alertInterval = setInterval(() => {
+    alert("subscribe today because The price will increase soon!, message admin on 09027420688, deposit payment is also allowed!!!");
+
+    // Stop the alerts when the countdown ends
+    if (--duration <= 0) {
+      clearInterval(alertInterval);
+    }
+  }, 60000); // 60000 milliseconds = 1 minute
+}
+
+// Initialize the countdown and alerts
+const sevenDaysInSeconds = 604800; // 7 days in seconds
+startCountdown(sevenDaysInSeconds);
+showRepeatingAlertFor7Days(sevenDaysInSeconds);
+
+
+
    
 </script>
     
