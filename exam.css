@@ -1055,6 +1055,27 @@ nav a{
 .containt button:hover {
     background-color: #45a049;
 }
+
+#backToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position (sticky) */
+    bottom: 20px; /* Place the button 20px from the bottom */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    font-size: 18px; /* Increase font size */
+    background-color: #555; /* Dark background color */
+    color: white; /* White text color */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Add a pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+}
+
+#backToTopBtn:hover {
+    background-color: #333; /* Darker background on hover */
+}
+
 /* Add this media query at the end of your CSS file */
 /* Add this media query at the end of your CSS file */
 @media screen and (max-width: 768px) {
