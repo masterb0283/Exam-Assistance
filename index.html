@@ -348,52 +348,66 @@ mybutton.addEventListener('click', function(){
 
 // script.js
 
-// Function to start the countdown
-function startCountdown(duration) {
-  let timer = duration, days, hours, minutes, seconds;
+function startCountdown() {
   const countdownElement = document.getElementById('countdown');
+  let endTime = localStorage.getItem('endTime');
+
+  // If there's no stored endTime, calculate it based on the current time and 7 days
+  if (!endTime) {
+    const now = new Date().getTime();
+    endTime = now + 604800000; // 7 days in milliseconds
+    localStorage.setItem('endTime', endTime); // Store the endTime in localStorage
+  }
 
   const interval = setInterval(function () {
-    days = Math.floor(timer / 86400);
-    hours = Math.floor((timer % 86400) / 3600);
-    minutes = Math.floor((timer % 3600) / 60);
-    seconds = timer % 60;
+    const now = new Date().getTime();
+    let remainingTime = endTime - now; // Calculate the remaining time
 
-    days = days < 10 ? '0' + days : days;
-    hours = hours < 10 ? '0' + hours : hours;
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
-
-    countdownElement.textContent = `${days}:${hours}:${minutes}:${seconds}`;
-
-    // Stop countdown at 0
-    if (--timer < 0) {
+    if (remainingTime <= 0) {
       clearInterval(interval);
       countdownElement.textContent = "Time's Up! Price has increased!";
+      localStorage.removeItem('endTime'); // Clear the timer once it finishes
+      return;
     }
+
+    // Convert remaining time to days, hours, minutes, and seconds
+    const days = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((remainingTime % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+    // Display the remaining time
+    countdownElement.textContent = 
+      (days < 10 ? '0' : '') + days + ":" + 
+      (hours < 10 ? '0' : '') + hours + ":" + 
+      (minutes < 10 ? '0' : '') + minutes + ":" + 
+      (seconds < 10 ? '0' : '') + seconds;
+
   }, 1000);
 }
 
 // Function to show an alert every 1 minute
-function showRepeatingAlertFor7Days(duration) {
+function showRepeatingAlertFor7Days() {
   const alertInterval = setInterval(() => {
-    alert("subscribe today because The price will increase soon!, message admin on 09027420688, deposit payment is also allowed!!!");
+    alert("Subscribe today because the price will increase soon! Message admin on 09027420688, deposit payment is also allowed!");
 
     // Stop the alerts when the countdown ends
-    if (--duration <= 0) {
+    let endTime = localStorage.getItem('endTime');
+    if (!endTime || new Date().getTime() >= endTime) {
       clearInterval(alertInterval);
     }
+
   }, 60000); // 60000 milliseconds = 1 minute
 }
 
-// Initialize the countdown and alerts
-const sevenDaysInSeconds = 604800; // 7 days in seconds
-startCountdown(sevenDaysInSeconds);
-showRepeatingAlertFor7Days(sevenDaysInSeconds);
+// Start the countdown and repeating alert
+startCountdown();
+showRepeatingAlertFor7Days();
 
 
 
-   
+
+
 </script>
     
 
